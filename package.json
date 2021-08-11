@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/medallyon/update-package-version-on-release#readme",
   "dependencies": {
-    "@actions/core": "^1.1.1",
+    "@actions/core": "^1.4.0",
     "fs-extra": "^10.0.0"
   },
   "devDependencies": {
