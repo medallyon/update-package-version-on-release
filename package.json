@@ -1,6 +1,6 @@
 {
   "name": "update-package-version-on-release",
-  "version": "1.0.0",
+  "version": "1.5.6.21",
   "description": "Update your package.json version automatically when a new release is created, released, or published, using the release tag.",
   "main": "index.js",
   "scripts": {
