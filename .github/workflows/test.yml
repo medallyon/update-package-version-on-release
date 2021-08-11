@@ -1,25 +1,29 @@
 name: "units-test"
 on:
-  pull_request:
-  push:
-    branches:
-      - master
-      - 'releases/*'
+  release:
+    types: [ published ]
 
 jobs:
   # unit tests
   units:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - run: npm ci
-    - run: npm test
+      - uses: actions/checkout@v2
+      - run: npm ci
+      - run: npm test
 
   # test action works running from the graph
   test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: ./
-      with:
-        milliseconds: 1000
+      - uses: actions/checkout@v2
+
+      - name: Bump Package Version
+        uses: ./
+
+      - name: Auto Commit Action
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Bump Package Version
+          commit_options: "--no-verify --signoff"
+          file_pattern: package.json
