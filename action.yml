@@ -2,8 +2,9 @@ name: "Update package.json version on release"
 description: "Update your package.json version automatically when a new release is created, released, or published, using the release tag."
 author: "medallyon"
 
-icon: arrow-up
-color: green
+branding:
+  icon: "arrow-up"
+  color: "green"
 
 runs:
   using: "node12"
